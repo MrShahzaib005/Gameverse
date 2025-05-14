@@ -9,7 +9,7 @@ $password = 'root';
 
 $database = 'game-verse';
 
-$servername='https://gameverse-theta.vercel.app/';
+$servername='localhost:3306';
 
 $mysqli = new mysqli($servername, $user,
 
