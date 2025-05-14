@@ -72,7 +72,7 @@ body {
 /* Select element specific styles */
 select.input-field {
     appearance: none;
-    background-image: url("D:\Prompt#2\bg3.jpg");
+    background-image: url("../images/bg3.jpg");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;

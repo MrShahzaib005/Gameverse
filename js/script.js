@@ -193,7 +193,8 @@ function initializeRegistrationForm() {
     });
     
     // Form submission handler
-    registrationForm.addEventListener('submit', function(e) {
+
+    /*registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const game = gameSelect.value;
         const gameInfo = gameFees[game];
@@ -253,8 +254,9 @@ function initializeRegistrationForm() {
         if (existingPreview) {
             existingPreview.remove();
         }
-    });
+    });*/
 }
+
 
 // Navbar scroll effect initialization
 function initializeNavbarScroll() {
@@ -269,10 +271,12 @@ function initializeNavbarScroll() {
 }
 
 // Mobile menu toggle
+/*
 document.getElementById('mobile-menu-button').addEventListener('click', function() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
 });
+*/
 
 // Game tab switching
 document.querySelectorAll('.game-tab').forEach(tab => {
@@ -294,7 +298,7 @@ document.querySelectorAll('.game-tab').forEach(tab => {
     });
 });
 
-// Registration type toggle
+/* Registration type toggle
 document.querySelectorAll('input[name="regType"]').forEach(radio => {
     radio.addEventListener('change', function() {
         if (this.value === 'team') {
@@ -308,8 +312,9 @@ document.querySelectorAll('input[name="regType"]').forEach(radio => {
         }
     });
 });
+*/
 
-// Form submission
+/* Form submission
 document.getElementById('eventRegistrationForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -326,6 +331,7 @@ document.getElementById('eventRegistrationForm').addEventListener('submit', func
     // Reset form
     this.reset();
 });
+*/
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
