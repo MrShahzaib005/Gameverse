@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Registration | GameVerse25</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg border-b border-gray-800 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-gaming gradient-text">GAMEVERSE</a>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#" class="text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Header -->
+    <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-gaming font-bold mb-4 gradient-text">GameVerse25 Registration</h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join the biggest gaming tournament of 2025 with over 600,000 PKR in total prizes across multiple games.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-12 bg-gray-900">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="register-form rounded-xl p-8 shadow-2xl">
+                <form id="registrationForm">
+                    <!-- Game Selection -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Select Game</label>
+                        <select id="gameSelect" class="w-full px-4 py-2 rounded-md input-field" required>
+                            <option value="">Choose your game</option>
+                            <option value="cod">COD Black OPS 6 (Team)</option>
+                            <option value="valorant">Valorant (Team)</option>
+                            <option value="pubg">PUBG Mobile (Team)</option>
+                            <option value="fifa">FIFA 25 (Solo)</option>
+                            <option value="tekken">Tekken 8 (Solo)</option>
+                        </select>
+                    </div>
+
+                    <!-- Team Registration Fields -->
+                    <div id="teamFields" class="hidden">
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Team Name</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-md input-field" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Team Members</label>
+                            <div id="teamMembersContainer" class="space-y-3">
+                                <!-- Member fields will be added dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solo Registration Fields -->
+                    <div id="soloFields" class="hidden">
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Player Name</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-md input-field" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Game ID/Username</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-md input-field" required>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="w-full px-4 py-2 rounded-md input-field" required>
+                        <p class="text-xs text-gray-400 mt-1">Example: example@email.com</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                        <input type="tel" name="phone" pattern="03[0-9]{9}" class="w-full px-4 py-2 rounded-md input-field" required>
+                        <p class="text-xs text-gray-400 mt-1">Format: 03XXXXXXXXX</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">WhatsApp Number</label>
+                        <input type="tel" name="whatsapp" pattern="03[0-9]{9}" class="w-full px-4 py-2 rounded-md input-field" required>
+                        <p class="text-xs text-gray-400 mt-1">Format: 03XXXXXXXXX</p>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">CNIC Number</label>
+                        <input type="text" name="cnic" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" class="w-full px-4 py-2 rounded-md input-field" required>
+                        <p class="text-xs text-gray-400 mt-1">Format: XXXXX-XXXXXXX-X</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">University/College Name</label>
+                        <input type="text" name="institution" class="w-full px-4 py-2 rounded-md input-field" required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Student ID/Roll Number</label>
+                        <input type="text" name="student_id" class="w-full px-4 py-2 rounded-md input-field" required>
+                    </div>
+
+                    <!-- For team registrations, add CNIC fields for all players -->
+                    <div id="teamMembersCNIC" class="hidden mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Team Members' CNICs</label>
+                        <div id="teamMembersCNICContainer" class="space-y-3">
+                            <!-- CNIC fields will be added dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="mb-8 p-6 rounded-xl bg-[#1a1b2e]">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-gray-300">Registration Fee:</span>
+                            <span id="regFee" class="text-xl font-gaming text-[#00ffff]">Select a game</span>
+                        </div>
+                        
+                        <h3 class="text-[#8a7cff] text-xl mb-4">Payment Details</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-200">
+                                <i class="fas fa-wallet mr-3 text-[#8a7cff]"></i>
+                                <span>EasyPaisa: 03165416112 (Hassan Bilal)</span>
+                            </li>
+                            <li class="flex items-center text-gray-200">
+                                <i class="fas fa-university mr-3 text-[#8a7cff]"></i>
+                                <span>Meezan Bank-PANJGOOR BR</span>
+                            </li>
+                            <li class="flex items-center text-gray-200">
+                                <i class="fas fa-user mr-3 text-[#8a7cff]"></i>
+                                <span>Account Title: MUHAMMAD HAMEED</span>
+                            </li>
+                            <li class="flex items-center text-gray-200">
+                                <i class="fas fa-credit-card mr-3 text-[#8a7cff]"></i>
+                                <span>Account Number: 98510110849865</span>
+                            </li>
+                            <li class="flex items-center text-gray-200">
+                                <i class="fas fa-university mr-3 text-[#8a7cff]"></i>
+                                <span>IBAN: PK91MEZN0098510110849865</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Transaction Details -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Transaction ID</label>
+                        <input type="text" name="transactionId" class="w-full px-4 py-2 rounded-md input-field" required>
+                        <p class="text-xs text-gray-400 mt-1">Enter the transaction ID from your payment</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Payment Screenshot</label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-600 border-dashed rounded-md hover:border-purple-500 transition-colors">
+                            <div class="space-y-1 text-center">
+                                <i class="fas fa-upload text-gray-400 text-2xl mb-3"></i>
+                                <div class="flex text-sm text-gray-400">
+                                    <label for="payment-proof" class="relative cursor-pointer rounded-md font-medium text-purple-500 hover:text-purple-400">
+                                        <span>Upload a file</span>
+                                        <input id="payment-proof" name="payment-proof" type="file" accept="image/*" class="sr-only" required>
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-400">
+                                    PNG, JPG, GIF up to 10MB
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="flex items-start mb-6">
+                        <div class="flex items-center h-5">
+                            <input type="checkbox" class="w-4 h-4 rounded bg-gray-700 border-gray-600" required>
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label class="font-medium text-gray-300">I agree to the tournament rules and understand the registration fee is non-refundable</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-3 rounded-md font-medium btn-glow mb-8">
+                        Complete Registration
+                    </button>
+
+                    <!-- Tournament Details -->
+                    <div class="border-t border-gray-700 pt-8">
+                        <h2 class="text-2xl font-gaming text-center mb-8 gradient-text">Tournament Details</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <!-- Game Details Cards -->
+                            <div class="game-card">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-gaming mb-4">Team Games</h3>
+                                    <ul class="space-y-4">
+                                        <li>
+                                            <div class="font-medium text-white mb-1">COD Black OPS 6</div>
+                                            <div class="text-gray-400 text-sm">5v5 Teams</div>
+                                            <div class="text-purple-500">1200 PKR per player</div>
+                                            <div class="text-green-500">Prize: 150,000 PKR</div>
+                                        </li>
+                                        <li>
+                                            <div class="font-medium text-white mb-1">Valorant</div>
+                                            <div class="text-gray-400 text-sm">5v5 Teams</div>
+                                            <div class="text-purple-500">1200 PKR per player</div>
+                                            <div class="text-green-500">Prize: 150,000 PKR</div>
+                                        </li>
+                                        <li>
+                                            <div class="font-medium text-white mb-1">PUBG Mobile</div>
+                                            <div class="text-gray-400 text-sm">4v4 Teams</div>
+                                            <div class="text-purple-500">500 PKR per player</div>
+                                            <div class="text-green-500">Prize: 130,000 PKR</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="game-card">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-gaming mb-4">Solo Games</h3>
+                                    <ul class="space-y-4">
+                                        <li>
+                                            <div class="font-medium text-white mb-1">Tekken 8</div>
+                                            <div class="text-gray-400 text-sm">Solo Tournament</div>
+                                            <div class="text-purple-500">1000 PKR per player</div>
+                                            <div class="text-green-500">Prize: 110,000 PKR</div>
+                                        </li>
+                                        <li>
+                                            <div class="font-medium text-white mb-1">FIFA 25</div>
+                                            <div class="text-gray-400 text-sm">Solo Tournament</div>
+                                            <div class="text-purple-500">800 PKR per player</div>
+                                            <div class="text-green-500">Prize: 60,000 PKR</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="game-card">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-gaming mb-4">Tournament Schedule</h3>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start">
+                                            <div class="bg-purple-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                                <i class="fas fa-calendar-day text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium text-white">Day 1 - June 13</p>
+                                                <p class="text-gray-400 text-sm">COD & FIFA Tournaments</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="bg-blue-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                                <i class="fas fa-calendar-day text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium text-white">Day 2 - June 14</p>
+                                                <p class="text-gray-400 text-sm">Valorant & Tekken Tournaments</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="bg-green-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                                <i class="fas fa-calendar-day text-xs"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium text-white">Day 3 - June 15</p>
+                                                <p class="text-gray-400 text-sm">PUBG Mobile & Finals</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-gaming gradient-text mb-4">GAMEVERSE</h2>
+                <p class="text-gray-400">© 2024 GameVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

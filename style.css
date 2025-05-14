@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #6c5ce7;
+    --secondary: #00cec9;
+    --dark: #2d3436;
+    --light: #f5f6fa;
+    --accent: #fd79a8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f1a;
+    color: var(--light);
+    overflow-x: hidden;
+}
+
+.font-gaming {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-glow {
+    box-shadow: 0 0 15px var(--primary);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 25px var(--primary);
+    transform: translateY(-2px);
+}
+
+.game-card {
+    transition: all 0.3s ease;
+    background: rgba(45, 52, 54, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+.register-form {
+    background: rgba(45, 52, 54, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+}
+
+.input-field {
+    background: rgba(45, 52, 54, 0.9);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    color: white;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+}
+
+/* Select element specific styles */
+select.input-field {
+    appearance: none;
+    background-image: url("D:\Prompt#2\bg3.jpg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+select.input-field option {
+    background-color: #2d3436;
+    color: white;
+    padding: 0.5rem;
+}
+
+select.input-field:focus {
+    border-color: var(--primary);
+}
+
+.countdown-container {
+    background: rgba(45, 52, 54, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.countdown-item {
+    background: rgba(45, 52, 54, 0.7);
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.game-tab {
+    transition: all 0.3s ease;
+}
+
+.game-tab.active {
+    background: rgba(108, 92, 231, 0.2);
+    border-bottom: 3px solid var(--primary);
+}
+
+.prize-card {
+    background: linear-gradient(135deg, rgba(45, 52, 54, 0.7), rgba(0, 206, 201, 0.1));
+    border: 1px solid rgba(0, 206, 201, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+} 
