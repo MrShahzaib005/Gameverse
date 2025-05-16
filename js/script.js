@@ -77,7 +77,7 @@ function initializeRegistrationForm() {
             input.name = `player${i}`;
             input.placeholder = `Player ${i}${i === 1 ? ' (Captain)' : ''}`;
             input.className = 'w-full px-4 py-2 rounded-md input-field mb-3';
-            input.required = true;
+            input.required = false;
             teamMembersContainer.appendChild(input);
 
             // Create CNIC field
