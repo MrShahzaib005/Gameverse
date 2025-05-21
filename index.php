@@ -28,7 +28,7 @@ include_once('header.php')
         <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-transparent z-10"></div>
         <div class="absolute inset-0 bg-[url('images/bg001.jpg')] bg-cover bg-center"></div>
         <div class="relative z-20 max-w-4xl mx-auto px-4">
-            <h1 class="text-5xl md:text-7xl font-gaming mb-6 gradient-text">GameVerse25</h1>
+       <h1 class="text-5xl md:text-7xl font-gaming mb-6 gradient-text">IQRA UNIVERSITY <br/> Games Verse 25</h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-8">Join the Ultimate Gaming Tournament</p>
             <div class="countdown-container mb-8">
                 <div class="grid grid-cols-4 gap-4 max-w-lg mx-auto">
@@ -67,7 +67,7 @@ include_once('header.php')
                         <img src="images/cod.jpg" alt="COD" class="w-full h-full object-cover rounded-t-lg">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-gaming mb-2">COD Black OPS 6</h3>
+                        <h3 class="text-xl font-gaming mb-2"><a href="registration.php?game=cod" target="_blank">COD Black OPS 6</a></h3>
                         <p class="text-gray-400 mb-4">5v5 Team Tournament</p>
                         <div class="text-purple-500 font-gaming">Prize: 150,000 PKR</div>
                     </div>
@@ -76,10 +76,10 @@ include_once('header.php')
                 <!-- Valorant -->
                 <div class="game-card">
                     <div class="relative h-48">
-                        <img src="images/valorant.jpeg" alt="Valorant" class="w-full h-full object-cover rounded-t-lg">
+                        <a href="registration.php?game=valorant" target="_blank"><img src="images/valorant.jpeg" alt="Valorant" class="w-full h-full object-cover rounded-t-lg"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-gaming mb-2">Valorant</h3>
+                        <h3 class="text-xl font-gaming mb-2"><a href="registration.php?game=valorant" target="_blank">Valorant</a></h3>
                         <p class="text-gray-400 mb-4">5v5 Team Tournament</p>
                         <div class="text-purple-500 font-gaming">Prize: 150,000 PKR</div>
                     </div>
@@ -88,10 +88,10 @@ include_once('header.php')
                 <!-- PUBG Mobile -->
                 <div class="game-card">
                     <div class="relative h-48">
-                        <img src="images/pubg.jpg" alt="PUBG Mobile" class="w-full h-full object-cover rounded-t-lg">
+                        <a href="registration.php?game=pubg" target="_blank"><img src="images/pubg.jpg" alt="PUBG Mobile" class="w-full h-full object-cover rounded-t-lg"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-gaming mb-2">PUBG Mobile</h3>
+                        <h3 class="text-xl font-gaming mb-2"><a href="registration.php?game=pubg" target="_blank">PUBG Mobile</a></h3>
                         <p class="text-gray-400 mb-4">4v4 Team Tournament</p>
                         <div class="text-purple-500 font-gaming">Prize: 130,000 PKR</div>
                     </div>
@@ -100,10 +100,10 @@ include_once('header.php')
                 <!-- FIFA 25 -->
                 <div class="game-card">
                     <div class="relative h-48">
-                        <img src="images/fifa.jpg" alt="FIFA 25" class="w-full h-full object-cover rounded-t-lg">
+                        <a href="registration.php?game=fifa" target="_blank"><img src="images/fifa.jpg" alt="FIFA 25" class="w-full h-full object-cover rounded-t-lg"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-gaming mb-2">FIFA 25</h3>
+                        <h3 class="text-xl font-gaming mb-2"><a href="registration.php?game=fifa" target="_blank">FIFA 25</a></h3>
                         <p class="text-gray-400 mb-4">Solo Tournament</p>
                         <div class="text-purple-500 font-gaming">Prize: 60,000 PKR</div>
                     </div>
@@ -112,10 +112,10 @@ include_once('header.php')
                 <!-- Tekken 8 -->
                 <div class="game-card">
                     <div class="relative h-48">
-                        <img src="images/tekken.jpeg" alt="Tekken 8" class="w-full h-full object-cover rounded-t-lg">
+                        <a href="registration.php?game=tekken" target="_blank"><img src="images/tekken.jpeg" alt="Tekken 8" class="w-full h-full object-cover rounded-t-lg"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-gaming mb-2">Tekken 8</h3>
+                        <h3 class="text-xl font-gaming mb-2"><a href="registration.php?game=tekken" target="_blank">Tekken 8</a></h3>
                         <p class="text-gray-400 mb-4">Solo Tournament</p>
                         <div class="text-purple-500 font-gaming">Prize: 110,000 PKR</div>
                     </div>

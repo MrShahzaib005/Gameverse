@@ -54,6 +54,7 @@ if (isset($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $rollnumber = $_POST["studentId"];
     $transactionId = $_POST["transactionId"];
     $gameSelect = $_POST["gameSelect"];
+    $province = $_POST["province"];
     //get province here 
 
     $sql = "SELECT COUNT(*) as count FROM registration WHERE email_address = ?";
@@ -73,8 +74,8 @@ if (isset($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
         move_uploaded_file($_FILES["payment_proof"]["tmp_name"], $targetFile);
 
         // ✅ Insert into database
-        $registrationSql = "INSERT INTO registration (email_address, phone, whatsapp,cnic,institution,rollnumber,transactionProof,transactionId,gameSelect) 
-        VALUES ('$email', '$phone', '$whatsapp', '$cnic','$institution','$rollnumber','$payment_proof','$transactionId','$gameSelect')";
+        $registrationSql = "INSERT INTO registration (email_address, phone, whatsapp,cnic,institution,rollnumber,transactionProof,transactionId,gameSelect,province) 
+        VALUES ('$email', '$phone', '$whatsapp', '$cnic','$institution','$rollnumber','$payment_proof','$transactionId','$gameSelect','$province')";
         if ($mysqli->query($registrationSql) === TRUE) {
             $registrationId = $mysqli->insert_id;
             if ($gameSelect == "cod" || $gameSelect == "valorant" || $gameSelect == "pubg") {
@@ -82,14 +83,17 @@ if (isset($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 addSoloMembers($registrationId,$mysqli);
             }
-           
-            $message = "Congratulations! Registration is successful.";
-            $header = "From:mirza.aqueel.qau@gmail.com \r\n";
-            $header .= "Cc:mr.shahzaib25005@gmail.com \r\n";
+            $encodedEmail = base64_encode($email);
+            $message = "Congratulations! You have successfully registered for game $gameSelect.";
+            $emailSubject = "Registration GameVerse $gameSelect";
+            $emailMessage = "Congratulations! You have successfully registered for game $gameSelect. Please click on the link below to verify your email address. <br/>";
+            $emailMessage .= "Click <a href='https://gamesverse.net/verifyEmail.php?code=$encodedEmail' target='_blank'>verify Email</a> to verify your email address.";
+            $header = "From: mirza.aqueel.qau@gmail.com \r\n";
+            $header .= "Cc: mr.shahzaib25005@gmail.com \r\n";
             $header .= "MIME-Version: 1.0\r\n";
             $header .= "Content-type: text/html\r\n";
-      
-            mail("mirza.aqueel.qau@gmail.com","Registration GameVerse",$message,$header);
+            
+            mail($email,$emailSubject,$emailMessage,$header);
    
             
         } else {
@@ -119,14 +123,32 @@ if (isset($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Game Selection -->
                     <div class="mb-6">
                         <label class="block text-sm font-medium text-gray-300 mb-2">Select Game</label>
-                        <select id="gameSelect" name="gameSelect" class="w-full px-4 py-2 rounded-md input-field" required>
-                            <option value="">Choose your game</option>
-                            <option value="cod">COD Black OPS 6 (Team)</option>
-                            <option value="valorant">Valorant (Team)</option>
-                            <option value="pubg">PUBG Mobile (Team)</option>
-                            <option value="fifa">FIFA 25 (Solo)</option>
-                            <option value="tekken">Tekken 8 (Solo)</option>
-                        </select>
+                        <?php 
+                        $game = "";
+                      if (isset($_GET['game'])) {
+                            $game = $_GET['game'];
+                        } 
+                  
+                    $games = [
+                        "cod" => "COD Black OPS 6 (Team)",
+                        "valorant" => "Valorant (Team)",
+                        "pubg" => "PUBG Mobile (Team)",
+                        "fifa" => "FIFA 25 (Solo)",
+                        "tekken" => "Tekken 8 (Solo)"
+                    ];
+                    
+                    ?>
+                <select id="gameSelect" name="gameSelect" class="w-full px-4 py-2 rounded-md input-field" required>
+                    <option value="">Choose your game</option>
+                    <?php foreach ($games as $key => $value): 
+                            $sel = "";
+                            if ($game == $key):
+                                $sel = "selected";
+                            endif;
+                        ?>
+                        <option value="<?= htmlspecialchars($key); ?>" <?= $sel; ?>><?= htmlspecialchars($value); ?></option>
+                    <?php endforeach; ?>
+                </select>
                     </div>
 
                     <!-- Team Registration Fields -->
@@ -195,10 +217,10 @@ if (isset($_POST) && $_SERVER["REQUEST_METHOD"] == "POST") {
                         <select id="province" name="province" class="w-full px-4 py-2 rounded-md input-field" required>
                             <option value="">Choose your province</option>
                             <option value="punjab">Punjab</option>
-                            <option value="valorant">Valorant (Team)</option>
-                            <option value="pubg">PUBG Mobile (Team)</option>
-                            <option value="fifa">FIFA 25 (Solo)</option>
-                            <option value="tekken">Tekken 8 (Solo)</option>
+                            <option value="sindh">Sindh</option>
+                            <option value="balochistan">Balochistan</option>
+                            <option value="kpk">KPK</option>
+                            <option value="GB">Azad Kashmir and Gilgit-Baltistan</option>
                         </select>
                     </div>
 

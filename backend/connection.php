@@ -3,11 +3,11 @@
 
 try {
 
-$user = 'root';
+$user = 'dkddyzmy_game_verse';
 
-$password = 'root';
+$password = '_1*A_Q_3_ab_786';
 
-$database = 'game-verse';
+$database = 'dkddyzmy_game_verse';
 
 $servername='localhost:3306';
 

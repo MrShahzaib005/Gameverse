@@ -1,0 +1,2 @@
+[16-May-2025 11:03:28 UTC] Cron reschedule event error for hook: action_scheduler_run_queue, Error code: invalid_schedule, Error message: Event schedule does not exist., Data: {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[16-May-2025 11:05:14 UTC] Cron reschedule event error for hook: nfd_data_sync_cron, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"minutely","args":[],"interval":60}
