@@ -65,7 +65,7 @@ $mysqli->close();
             <?= $verificationMessage ?>
         </div>
 
-        <a href="index.php" class="btn btn-primary mt-3">Go to Homepage</a>
+        <a href="index.html" class="btn btn-primary mt-3">Go to Homepage</a>
     </div>
 </body>
 </html>
